@@ -4,7 +4,7 @@ import rasterio as rio
 from pathlib import Path
 
 
-def load_rasters(ghsl_path, pop_path, smod_path):
+def load_rasters(pop_path, smod_path):
     with rio.open(smod_path, nodata=-200) as ds:
         smod_orig = ds.read(1).astype(float)
         transform = ds.transform
